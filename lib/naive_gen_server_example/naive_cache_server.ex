@@ -1,6 +1,6 @@
 defmodule NaiveGenServerExample.NaiveCacheServer do
   alias NaiveGenServerExample.NaiveGenServer
-  
+
   @behaviour NaiveGenServer
 
   # NaiveCacheServer API
@@ -43,6 +43,10 @@ defmodule NaiveGenServerExample.NaiveCacheServer do
   def handle_info(:print, state) do
     IO.inspect(state)
 
+    {:noreply, state}
+  end
+
+  def handle_info(_message, state) do
     {:noreply, state}
   end
 end

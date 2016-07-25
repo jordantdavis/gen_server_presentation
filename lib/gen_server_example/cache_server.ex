@@ -43,4 +43,8 @@ defmodule GenServerExample.CacheServer do
 
     {:noreply, state}
   end
+
+  def handle_info(_message, state) do
+    {:noreply, state}
+  end
 end
