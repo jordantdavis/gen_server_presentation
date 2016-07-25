@@ -3,12 +3,12 @@ defmodule GenServerExample.CacheServer do
 
   # CacheServer API
 
-  def add(server_pid, key, value) do
-    GenServer.cast(server_pid, {:add, key, value})
+  def add(server, key, value) do
+    GenServer.cast(server, {:add, key, value})
   end
 
-  def remove(server_pid, key) do
-    GenServer.call(server_pid, {:remove, key})
+  def remove(server, key) do
+    GenServer.call(server, {:remove, key})
   end
 
   # GenServer callbacks
